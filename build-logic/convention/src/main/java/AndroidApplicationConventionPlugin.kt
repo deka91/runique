@@ -1,3 +1,5 @@
+import ch.dk.convention.ExtensionType
+import ch.dk.convention.configureBuildTypes
 import ch.dk.convention.configureKotlinAndroid
 import ch.dk.convention.libs
 import com.android.build.api.dsl.ApplicationExtension
@@ -25,8 +27,10 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
                     targetSdk = libs.findVersion("projectTargetSdkVersion").get().toString().toInt()
                 }
 
-                configureKotlinAndroid(this)
+                configureKotlinAndroid(commonExtension = this)
+                configureBuildTypes(commonExtension = this, extensionType = ExtensionType.APPLICATION)
             }
+
         }
     }
 }
