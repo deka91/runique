@@ -1,7 +1,7 @@
 plugins {
+    alias(libs.plugins.runique.android.application.compose)
     alias(libs.plugins.mapsplatform.secrets.plugin)
-    alias(libs.plugins.compose.compiler)
-    alias(libs.plugins.runique.android.application)
+    // alias(libs.plugins.compose.compiler)
 }
 
 android {
@@ -12,10 +12,6 @@ android {
         vectorDrawables {
             useSupportLibrary = true
         }
-    }
-
-    buildFeatures {
-        compose = true
     }
 
     packaging {
